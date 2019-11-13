@@ -1,0 +1,19 @@
+{
+  "name": "number-rangejs",
+  "version": "1.0.0",
+  "dependencies": {},
+  "main": "dist/index.js",
+  "author": "Tomáš Kudláč <ahoj@tomaskudlac.sk> (https://tomaskudlac.sk/en)",
+  "license": "MIT",
+  "description": "Fast, light-weight, dependency-free class supporting number ranges",
+  "keywords": [
+    "number-rangejs",
+    "range",
+    "number-range",
+    "numberrange"
+  ],
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  },
+  "types": "types/index.d.ts"
+}
