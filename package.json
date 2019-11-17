@@ -1,20 +1,23 @@
 {
-  "name": "numeric-range",
-  "version": "1.0.0",
-  "dependencies": {},
-  "main": "dist/index.js",
-  "author": "Tomáš Kudláč <ahoj@tomaskudlac.sk> (https://tomaskudlac.sk/en)",
-  "license": "MIT",
-  "description": "Fast, light-weight, dependency-free library supporting numeric ranges",
-  "keywords": [
-    "numeric-range",
-    "numericrange",
-    "range",
-    "number-range",
-    "numberrange"
-  ],
-  "devDependencies": {
-    "typescript": "^3.7.2"
-  },
-  "types": "types/index.d.ts"
+    "name": "numeric-range",
+    "version": "1.0.0",
+    "dependencies": {},
+    "main": "dist/index.js",
+    "author": "Tomáš Kudláč <ahoj@tomaskudlac.sk> (https://tomaskudlac.sk/en)",
+    "license": "MIT",
+    "description": "Fast, light-weight, dependency-free library supporting numeric ranges",
+    "keywords": [
+        "numeric-range",
+        "numericrange",
+        "range",
+        "number-range",
+        "numberrange"
+    ],
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
+    "devDependencies": {
+        "typescript": "^3.7.2"
+    },
+    "types": "types/index.d.ts"
 }
