@@ -1,4 +1,4 @@
-declare class NumberRange
+declare class NumericRange
 {
     constructor(min: number, max: number);
     public enumerate(step?: number): number[];
@@ -8,4 +8,4 @@ declare class NumberRange
     public min: number;
 }
 
-export default NumberRange;
+export default NumericRange;

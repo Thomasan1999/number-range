@@ -1,6 +1,6 @@
-type BoundaryType = 'min' | 'max';
+type BoundType = 'min' | 'max';
 
-export = class NumberRange
+export = class NumericRange
 {
     private _max: number;
     private _min: number;
@@ -11,24 +11,24 @@ export = class NumberRange
         this.max = max;
     }
 
-    private _boundaryCheck(boundary: number, type: BoundaryType): void
+    private _boundCheck(bound: number, type: BoundType): void
     {
-        if (typeof boundary !== `number` || Number.isNaN(boundary))
+        if (typeof bound !== `number` || Number.isNaN(bound))
         {
             throw new Error(`The ${type}imal value of the range must be a numerical value`);
         }
 
-        if (type === `min` ? boundary >= this._max : this._min >= boundary)
+        if (type === `min` ? bound >= this._max : this._min >= bound)
         {
             throw new Error(`The maximal value must be larger than the minimal value`);
         }
     }
 
-    private _boundaryParse(boundary: any, type: BoundaryType): number
+    private _boundParse(boundary: any, type: BoundType): number
     {
         const boundaryParsed: number = Number(boundary);
 
-        this._boundaryCheck(boundaryParsed, type);
+        this._boundCheck(boundaryParsed, type);
 
         return boundaryParsed;
     }
@@ -84,7 +84,7 @@ export = class NumberRange
 
     public set max(max: number)
     {
-        this._max = this._boundaryParse(max, `max`);
+        this._max = this._boundParse(max, `max`);
     }
 
     public get min(): number
@@ -94,6 +94,6 @@ export = class NumberRange
 
     public set min(min: number)
     {
-        this._min = this._boundaryParse(min, `min`);
+        this._min = this._boundParse(min, `min`);
     }
 }

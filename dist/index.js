@@ -1,20 +1,20 @@
 "use strict";
-module.exports = class NumberRange {
+module.exports = class NumericRange {
     constructor(min, max) {
         this.min = min;
         this.max = max;
     }
-    _boundaryCheck(boundary, type) {
-        if (typeof boundary !== `number` || Number.isNaN(boundary)) {
+    _boundCheck(bound, type) {
+        if (typeof bound !== `number` || Number.isNaN(bound)) {
             throw new Error(`The ${type}imal value of the range must be a numerical value`);
         }
-        if (type === `min` ? boundary >= this._max : this._min >= boundary) {
+        if (type === `min` ? bound >= this._max : this._min >= bound) {
             throw new Error(`The maximal value must be larger than the minimal value`);
         }
     }
-    _boundaryParse(boundary, type) {
+    _boundParse(boundary, type) {
         const boundaryParsed = Number(boundary);
-        this._boundaryCheck(boundaryParsed, type);
+        this._boundCheck(boundaryParsed, type);
         return boundaryParsed;
     }
     enumerate(step = 1) {
@@ -47,13 +47,13 @@ module.exports = class NumberRange {
         return this._max;
     }
     set max(max) {
-        this._max = this._boundaryParse(max, `max`);
+        this._max = this._boundParse(max, `max`);
     }
     get min() {
         return this._min;
     }
     set min(min) {
-        this._min = this._boundaryParse(min, `min`);
+        this._min = this._boundParse(min, `min`);
     }
 };
 //# sourceMappingURL=index.js.map
