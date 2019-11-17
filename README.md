@@ -11,6 +11,11 @@ NumericRange is a library supporting number ranges between two real numbers call
 `npm i number-range`
 
 ## API
+### min: number
+The lower bound of the range. It represents the minimal value of the range. The value itself is included in the range.
+### max: number
+The upper bound of the range. It represents the maximal value of the range. The value itself is included in the range.
+
 ### constructor(min: number, max: number)
 The new keyword, lower and upper bound are required in the constructor, if one of the bounds is missing an error will be thrown. It is preferred to use the number type, the
  library uses the Number function to parse non-numerical values, so strings like `'5.5'` or bigints will work properly but using non-numerical types might lead to unexpected
