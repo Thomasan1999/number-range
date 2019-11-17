@@ -1,6 +1,6 @@
 # NumericRange
 
-NumericRange is a library supporting number ranges between two real numbers called bounds. The upper bound is the maximal value of the range, the lower bound is the minimal value
+NumericRange is a library supporting numeric ranges between two real numbers called bounds. The upper bound is the maximal value of the range, the lower bound is the minimal value
 . The
  object itself is not an array of numbers contained in
  the range but instead is an
@@ -8,7 +8,7 @@ NumericRange is a library supporting number ranges between two real numbers call
   a method enumerate() which returns an array of numbers instead similar to range function in other languages.
   
 ## Installation
-`npm i number-range`
+`npm i numeric-range`
 
 ## API
 ### min: number

@@ -1,5 +1,5 @@
 {
-  "name": "number-rangejs",
+  "name": "numeric-range",
   "version": "1.0.0",
   "dependencies": {},
   "main": "dist/index.js",
@@ -7,7 +7,8 @@
   "license": "MIT",
   "description": "Fast, light-weight, dependency-free library supporting numeric ranges",
   "keywords": [
-    "number-rangejs",
+    "numeric-range",
+    "numericrange",
     "range",
     "number-range",
     "numberrange"
