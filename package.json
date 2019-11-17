@@ -13,9 +13,6 @@
         "number-range",
         "numberrange"
     ],
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/"
-    },
     "devDependencies": {
         "typescript": "^3.7.2"
     },
