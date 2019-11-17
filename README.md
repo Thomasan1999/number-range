@@ -1,7 +1,6 @@
 # NumericRange
 
-NumericRange is a library supporting numeric ranges between two real numbers called bounds. The upper bound is the maximal value of the range, the lower bound is the minimal value
-. The
+NumericRange is a library supporting numeric ranges between two real numbers called bounds. The upper bound is the maximal value of the range, the lower bound is the minimal value. The
  object itself is not an array of numbers contained in
  the range but instead is an
  abstract representation of the range by containing bounds which allows us to add several helper methods and to save memory in the case the range is too large. The object contains

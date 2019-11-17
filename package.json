@@ -13,6 +13,10 @@
         "number-range",
         "numberrange"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Thomasan1999/numeric-range.git"
+    },
     "devDependencies": {
         "typescript": "^3.7.2"
     },
