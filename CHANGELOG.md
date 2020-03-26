@@ -1,3 +1,7 @@
+# 1.0.4 (2019-03-26)
+* Moved the JSDoc to .d.ts file due to being invisible in the index.js file.
+* Updated the Typescript version from 3.7.2 to 3.8.3
+
 # 1.0.3 (2019-03-26)
 * Added the changelog file.
 * Added JSDoc documentation.
