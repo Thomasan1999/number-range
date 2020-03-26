@@ -11,9 +11,9 @@ NumericRange is a library supporting numeric ranges between two real numbers cal
 
 ## API
 ### min: number
-The lower bound of the range. It represents the minimal value of the range. The value itself is included in the range.
+The lower bound of the range. The value itself is included in the range.
 ### max: number
-The upper bound of the range. It represents the maximal value of the range. The value itself is included in the range.
+The upper bound of the range. The value itself is included in the range.
 
 ### constructor(min: number, max: number)
 The new keyword, lower and upper bound are required in the constructor, if one of the bounds is missing an error will be thrown. It is preferred to use the number type, the
@@ -44,7 +44,7 @@ new NumericRange(5, 10).enumerate(.7)
  ```
 
 ### includes(searchNumber: number): boolean
-This method determines whether the search number is contained in the range. The search number might be equal to either bound.
+This method determines whether the search number is contained in the range. If the search number is equal to either bound, the method returns true.
 ```js
 new NumericRange(5, 10).includes(7.5)
 true
@@ -55,8 +55,8 @@ false
 ```
 
 ### incorporate(numberToIncorporate: number): number
-This method incorporates the number given in the argument to the range. It means if the number is greater than the upper bound, the method returns the upper bound. If the number
- is lower, lower bound is returned. Otherwise, the given number is returned.
+This method incorporates the number given in the argument to the range, if the number is greater than the upper bound the number is set to the upper bound in the case of the
+ number being lower than the lower bound, the number is set to the value of the lower bound, in the case of the number being in the range, the number itself is returned.
 ```js
 new NumericRange(5, 10).incorporate(12)
 10
