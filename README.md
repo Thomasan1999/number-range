@@ -3,11 +3,12 @@
 NumericRange is a library supporting numeric ranges between two real numbers called bounds. The upper bound is the maximal value of the range, the lower bound is the minimal value. The
  object itself is not an array of numbers contained in
  the range but instead is an
- abstract representation of the range by containing bounds which allows us to add several helper methods and to save memory in the case the range is too large. The object contains
-  a method enumerate() which returns an array of numbers instead similar to range function in other languages.
+ abstract representation of the range by containing bounds which allows us to add several helper methods and to save memory in the case the range is too large. The object contains a method enumerate() which returns an array of numbers instead similar to range function in other languages.
   
 ## Installation
 `npm i numeric-range`
+
+_Note: @types/numeric-range doesn't exist, types are included in the package itself._
 
 ## API
 ### min: number
@@ -16,9 +17,8 @@ The lower bound of the range. The value itself is included in the range.
 The upper bound of the range. The value itself is included in the range.
 
 ### constructor(min: number, max: number)
-The new keyword, lower and upper bound are required in the constructor, if one of the bounds is missing an error will be thrown. It is preferred to use the number type, the
- library uses the Number function to parse non-numerical values, so strings like `'5.5'` or bigints will work properly but using non-numerical types might lead to unexpected
-  behavior and side-effect. Use them at your own risk.
+The new keyword, lower and upper bound are required in the constructor, if either of the bounds is missing an error will be thrown. It is preferred to use the number type, the
+ library uses the Number function to parse non-numerical values, so strings like `'5.5'` or bigints will work properly but using non-numerical types might lead to unexpected behavior and side effects. Use them at your own risk.
 ```js
 new NumericRange(5, 10)
 ```
@@ -36,15 +36,14 @@ new NumericRange(0, 1).enumerate(.1)
 new NumericRange(5, 10).enumerate(.5)
 [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10]
 ```
-The step might be any positive number, if the current value + step is greater than the upper bound, the next value is omitted, regardless of whether the current value is equal
- or lower to the upper bound. The upper bound is not included either.
+The step might be any positive number, if the current value + step is greater than the upper bound, the next value is omitted, regardless of whether the current value is equal or lower to the upper bound. The upper bound is not included either.
  ```js
 new NumericRange(5, 10).enumerate(.7)
 [5, 5.7, 6.4, 7.1, 7.8, 8.5, 9.2, 9.9] //10 and 10.6 are not included
  ```
 
-### includes(searchNumber: number): boolean
-This method determines whether the search number is contained in the range. If the search number is equal to either bound, the method returns true.
+### includes(numberToCheck: number): boolean
+This method determines whether the range contains the number to check. If the number to check is equal to either bound, the method returns true.
 ```js
 new NumericRange(5, 10).includes(7.5)
 true
@@ -55,8 +54,8 @@ false
 ```
 
 ### incorporate(numberToIncorporate: number): number
-This method incorporates the number given in the argument to the range, if the number is greater than the upper bound the number is set to the upper bound in the case of the
- number being lower than the lower bound, the number is set to the value of the lower bound, in the case of the number being in the range, the number itself is returned.
+This method incorporates the number given in the argument to the range, if the number is greater than the upper bound the method returns the upper bound in the case of the
+ number to incorporate being lower than the lower bound, the method returns the lower bound, in the case of the number being in the range, the method returns the number itself.
 ```js
 new NumericRange(5, 10).incorporate(12)
 10
